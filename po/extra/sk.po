@@ -1,0 +1,49 @@
+# Slovak translation for noise
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the noise package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: noise\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2016-01-04 11:14+0100\n"
+"PO-Revision-Date: 2016-01-09 11:50+0000\n"
+"Last-Translator: Lukáš Papík <stereo839@gmail.com>\n"
+"Language-Team: Slovak <sk@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2016-03-01 05:40+0000\n"
+"X-Generator: Launchpad (build 17925)\n"
+
+msgid "Music"
+msgstr "Hudba"
+
+msgid "Music Player"
+msgstr "Prehrávač hudby"
+
+msgid "Listen to music"
+msgstr "Počúvať hudbu"
+
+msgid "Noise;Audio;Player;MP3;iPod;Play;Playlist;Media;CD;Phone;Songs;"
+msgstr "Hlas;Zvuk;Prehrávač;MP3;iPod;Play;Playlist;Média;CD;Mobil;Hudba;"
+
+msgid "About Music"
+msgstr "O hudbe..."
+
+msgid "Noise"
+msgstr "Hluk:"
+
+msgid "About Noise"
+msgstr "O programe..."
+
+msgid "The official elementary music player"
+msgstr "Oficiálný  hudobný prehrávač Elementary"
+
+msgid ""
+"Music is a fast and beautiful audio player with a focus on music and "
+"libraries. It handles external devices, CDs, and album art."
+msgstr ""
+"Hudba he rýchly a krásny hudobný prehrávač so zameraním na knižnice. Pracuje "
+"s externými zdrojmi, CD a albumy."

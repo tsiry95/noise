@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <enum id="org.pantheon.noise.repeat">
+    <value value="0" nick="off"/>
+    <value value="1" nick="media"/>
+    <value value="2" nick="album"/>
+    <value value="3" nick="artist"/>
+    <value value="4" nick="all"/>
+  </enum>
+  <enum id="org.pantheon.noise.shuffle">
+    <value value="0" nick="off"/>
+    <value value="1" nick="all"/>
+  </enum>
+  <enum id="org.pantheon.noise.windowstate">
+    <value value="0" nick="normal"/>
+    <value value="1" nick="maximized"/>
+  </enum>
+  <schema path="/org/pantheon/noise/settings/" id="org.pantheon.noise.settings">
+    <key type="s" name="music-folder">
+      <default>''</default>
+      <summary>Path to music folder</summary>
+      <description>Where music is copied to, saved, and managed</description>
+    </key>
+    <key type="s" name="music-mount-name">
+      <default>''</default>
+      <summary>Name of mount volume</summary>
+      <description>Used to attempt to automount the music folder when noise starts if it already isn't.</description>
+    </key>
+    <key type="b" name="update-folder-hierarchy">
+      <default>false</default>
+      <summary>Whether or not to auto-organize folders and rename files</summary>
+      <description>Whether or not to auto-organize folders and rename files</description>
+    </key>
+    <key type="b" name="write-metadata-to-file">
+      <default>false</default>
+      <summary>Whether or not to write metadata to file</summary>
+      <description>Whether or not to write metadata to file</description>
+    </key>
+    <key type="b" name="copy-imported-music">
+      <default>false</default>
+      <summary>Whether or not to copy imported files to music folder</summary>
+      <description>Whether or not to copy imported files to music folder</description>
+    </key>
+    <key type="b" name="close-while-playing">
+      <default>false</default>
+      <summary>Whether to close the player's window instead of hiding/minimizing it when a song is still playing. The window can be brought back by activating its desktop file.</summary>
+      <description>When enabled, the window will be closed even if a song is still being played (i.e. close = quit). Otherwise, if a song is being played, the application will not be closed, but minimized/hidden. The player is minimized or hidden depending on the values of the minimize-while-playing-shells key.</description>
+    </key>
+    <key type="as" name="minimize-while-playing-shells">
+      <default>['GNOME']</default>
+      <summary>List of desktop shells for which the player's window will be minimized instead of hidden when the close-while-playing option is set to false.</summary>
+      <description>For the Pantheon and GNOME desktop shells, the player's window is simply minimized due to the lack of a minimize button; the window is hidden for all the rest of desktop shells, unless they are added to this key. In fact, any dock-based shell should be part of this key, except those that lack a sound menu or in which the dock space is often limited (e.g. Unity). See the description of close-while-playing for more information.</description>
+    </key>
+    <key type="s" name="last-playlist-playing">
+      <default>''</default>
+      <summary>'s' for smart playlist or 'p' for static playlist + ID of last playlist playing</summary>
+      <description>'s' for smart playlist or 'p' for static playlist + ID of last playlist playing</description>
+    </key>
+    <key type="x" name="last-media-playing">
+      <default>0</default>
+      <summary>ID of last media playing</summary>
+      <description>ID of last media playing</description>
+    </key>
+    <key type="i" name="last-media-position">
+      <default>0</default>
+      <summary>Position, in seconds, of media</summary>
+      <description>Position, in seconds, of media when noise last closed</description>
+    </key>
+    <key enum="org.pantheon.noise.shuffle" name="shuffle-mode">
+      <default>'off'</default>
+      <summary>An index representing the shuffle mode</summary>
+      <description>An index representing the shuffle mode</description>
+    </key>
+    <key enum="org.pantheon.noise.repeat" name="repeat-mode">
+      <default>'off'</default>
+      <summary>An index representing the repeat mode</summary>
+      <description>An index representing the repeat mode</description>
+    </key>
+    <key type="s" name="search-string">
+      <default>''</default>
+      <summary>String of last search</summary>
+      <description>String of last search</description>
+    </key>
+    <key type="s" name="path-string">
+      <default>'$ALBUM_ARTIST/$ALBUM/$TRACK - $TITLE'</default>
+      <summary>String of the destination path to save files</summary>
+      <description>String of the destination path to save files</description>
+    </key>
+    <key type="as" name="plugins-disabled">
+      <default>[]</default>
+      <summary>List of disabled plugins</summary>
+      <description>Plugin modules to not load during startup</description>
+    </key>
+  </schema>
+
+  <schema path="/org/pantheon/noise/saved-state/" id="org.pantheon.noise.saved-state">
+    <key type="i" name="window-width">
+      <default>1100</default>
+      <summary>Window width</summary>
+      <description>Window width</description>
+    </key>
+    <key type="i" name="window-height">
+      <default>600</default>
+      <summary>Window height</summary>
+      <description>Window height</description>
+    </key>
+    <key enum="org.pantheon.noise.windowstate" name="window-state">
+      <default>'normal'</default>
+      <summary>The saved state of the window.</summary>
+      <description>The saved state of the window.</description>
+    </key>
+    <key type="i" name="sidebar-width">
+      <default>200</default>
+      <summary>Sidebar width</summary>
+      <description>Sidebar width</description>
+    </key>
+    <key type="i" name="more-width">
+      <default>150</default>
+      <summary>Right panel width</summary>
+      <description>Right panel width</description>
+    </key>
+    <key type="i" name="view-mode">
+      <default>1</default>
+      <summary>Index of which view type to use</summary>
+      <description>Index of which view type to use</description>
+    </key>
+    <key type="b" name="more-visible">
+      <default>false</default>
+      <summary>Whether or not the right panel is showing</summary>
+      <description>Whether or not the right panel is showing</description>
+    </key>
+    <key type="b" name="column-browser-enabled">
+      <default>false</default>
+      <summary>Whether or not the column browser is enabled</summary>
+      <description>Whether or not the column browser is enabled</description>
+    </key>
+    <key type="b" name="show-album-art-in-list-view">
+      <default>false</default>
+      <summary>Enables/disables album-art showing in the list view</summary>
+      <description>Whether or not to show album art in the list view</description>
+    </key>
+    <key type="i" name="column-browser-width">
+      <default>200</default>
+      <summary>column-browser column width</summary>
+      <description>column-browser column width</description>
+    </key>
+    <key type="i" name="column-browser-height">
+      <default>200</default>
+      <summary>column-browser column height</summary>
+      <description>column-browser column height</description>
+    </key>
+    <key type="i" name="column-browser-position">
+      <default>0</default>
+      <summary>column-browser columns position</summary>
+      <description>column-browser columns position</description>
+    </key>
+    <key type="as" name="column-browser-visible-columns">
+      <default>['3', '5', '6']</default>
+      <summary>Enabled column-browser columns for the music library view</summary>
+      <description>Enabled column-browser columns for the music library view</description>
+    </key>
+  </schema>
+
+  <schema path="/org/pantheon/noise/equalizer/" id="org.pantheon.noise.equalizer">
+    <key type="b" name="equalizer-enabled">
+      <default>false</default>
+      <summary>Whether or not the equalizer is enabled</summary>
+      <description>Whether or not the equalizer is enabled</description>
+    </key>
+    <key type="s" name="selected-preset">
+      <default>''</default>
+      <summary>Contains the name of the user-selected preset</summary>
+      <description>Contains information regarding the user-selected preset</description>
+    </key>
+    <key type="as" name="custom-presets">
+      <default>[]</default>
+      <summary>Custom Equalizer Presets</summary>
+      <description>Contains the list of presets added by the user. Gain values are between -80 and 80</description>
+    </key>
+    <key type="b" name="auto-switch-preset">
+      <default>true</default>
+      <summary>Whether or not to use the auto preset</summary>
+      <description>Whether or not to use the auto preset</description>
+    </key>
+  </schema>
+</schemalist>
